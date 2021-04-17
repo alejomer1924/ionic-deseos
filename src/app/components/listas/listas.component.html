@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-item-sliding *ngFor="let lista of _deseos.listas | filtroCompletado:tabNum">
+    <ion-item detail>
+      <ion-label (click)="irAgregarItems(lista.id)">{{lista.titulo}}</ion-label>
+      <ion-note color="tertiary" slot="end">{{lista.items.length}} items</ion-note>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="borrarLista(lista.id)">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item-options side="start">
+      <ion-item-option color="warning" (click)="modificarNombre(lista.id)">
+        <ion-icon name="create" slot="icon-only"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
